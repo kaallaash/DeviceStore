@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\DeviceStore.Shared.Core\DeviceStore.Shared.Core.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Core\DeviceStore.Shared.Core\DeviceStore.Shared.Core.csproj" />
     <ProjectReference Include="..\DeviceStore.Services.Users\DeviceStore.Services.Users.csproj" />
   </ItemGroup>
 
