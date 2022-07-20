@@ -33,6 +33,21 @@ public class UserController : ControllerBase
         return result;
     }
 
+    [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<UserDetails>> GetByLoginPassword(
+        [FromRoute] GetUserByLoginPasswordCommand command,
+        CancellationToken cancellationToken = default)
+    {
+        var result = await _usersService
+            .GetUserByLoginPassword(command, cancellationToken)
+            //.WithActionResult()
+            .ConfigureAwait(false);
+
+        return result;
+    }
+
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]

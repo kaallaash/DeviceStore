@@ -9,6 +9,10 @@ public interface IUsersService
         GetUserCommand command,
         CancellationToken cancellationToken = default);
 
+    Task<UserDetails> GetUserByLoginPassword(
+        GetUserByLoginPasswordCommand command,
+        CancellationToken cancellationToken = default);
+
     Task<string> Create(
         CreateUserCommand command,
         CancellationToken cancellationToken = default);

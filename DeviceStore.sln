@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceStore.Shared.Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceStore.Shared.Core", "Shared\Core\DeviceStore.Shared.Core\DeviceStore.Shared.Core.csproj", "{5ACA2D48-F986-495E-AD90-72A6A7267E4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceStore.Portal.App", "Portal\DeviceStore.Portal.App\DeviceStore.Portal.App.csproj", "{22371961-8191-4784-9D04-A663E32FBAC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{5ACA2D48-F986-495E-AD90-72A6A7267E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ACA2D48-F986-495E-AD90-72A6A7267E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ACA2D48-F986-495E-AD90-72A6A7267E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22371961-8191-4784-9D04-A663E32FBAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22371961-8191-4784-9D04-A663E32FBAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22371961-8191-4784-9D04-A663E32FBAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22371961-8191-4784-9D04-A663E32FBAC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{8148466C-3ABF-4411-8086-74D1E8E92195} = {9DCBA71D-22FD-4720-A3A3-BEBA7200C8BA}
 		{BC1A2005-153B-4637-9DF0-089FE695E798} = {8148466C-3ABF-4411-8086-74D1E8E92195}
 		{5ACA2D48-F986-495E-AD90-72A6A7267E4B} = {7B221E4C-E5F6-4618-A442-58E765FD28A1}
+		{22371961-8191-4784-9D04-A663E32FBAC8} = {E6C248EC-8884-4FC2-87D8-3212E348C17C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B63A8A3-0941-4CCA-8202-90C5A3963BF6}

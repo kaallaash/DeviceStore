@@ -39,6 +39,25 @@ public class UsersService : IUsersService
         return MapToDto(row);
     }
 
+    public async Task<UserDetails> GetUserByLoginPassword(
+        GetUserByLoginPasswordCommand command,
+        CancellationToken cancellationToken = default)
+    {
+        var row = await _dbContext.Users
+            .AsNoTracking()
+            .SingleOrDefaultAsync(
+                r => r.Login == command.Login && r.Password == command.Password,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        if (row == null)
+        {
+            throw new InvalidOperationException($"The user by this data is not found");
+        }
+
+        return MapToDto(row);
+    }
+
     public async Task<string> Create(
         CreateUserCommand command,
         CancellationToken cancellationToken = default)
