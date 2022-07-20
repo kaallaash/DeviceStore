@@ -2,4 +2,4 @@
 
 public record SubtractDeviceCommand(
     string Id,
-    int count);
+    int Count);

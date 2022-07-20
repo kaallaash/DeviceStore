@@ -3,7 +3,7 @@ using DeviceStore.Services.Warehouse.Contract.Models.Commands;
 
 namespace DeviceStore.Services.Warehouse.Contract;
 
-public interface IWarehouseService
+public interface IDevicesService
 {
     Task<DeviceDetails> Get(
         GetDeviceDetailsCommand command,
@@ -21,12 +21,12 @@ public interface IWarehouseService
         AddDeviceCommand command,
         CancellationToken cancellationToken = default);
 
-    Task<string> Update(
-        UpdateDeviceCommand command,
-        CancellationToken cancellationToken = default);
-
     Task<DeviceDetails> Subtract(
         SubtractDeviceCommand command,
+        CancellationToken cancellationToken = default);
+
+    Task<string> Update(
+        UpdateDeviceCommand command,
         CancellationToken cancellationToken = default);
 
     Task<string> Delete(
