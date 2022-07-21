@@ -13,16 +13,16 @@ public class UserController : ControllerBase
     private readonly IUsersService _usersService;
 
     public UserController(
-        IUsersService userService)
+        IUsersService usersService)
     {
-        _usersService = userService;
+        _usersService = usersService;
     }
 
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<UserDetails>> Get(
-    [FromRoute] GetUserCommand command,
+    [FromQuery] GetUserCommand command,
     CancellationToken cancellationToken = default)
     {
         var result = await _usersService
@@ -33,11 +33,11 @@ public class UserController : ControllerBase
         return result;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("GetByLoginPassword")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<UserDetails>> GetByLoginPassword(
-        [FromRoute] GetUserByLoginPasswordCommand command,
+        [FromQuery] GetUserByLoginPasswordCommand command,
         CancellationToken cancellationToken = default)
     {
         var result = await _usersService
@@ -48,7 +48,7 @@ public class UserController : ControllerBase
         return result;
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> Create(
@@ -63,7 +63,7 @@ public class UserController : ControllerBase
         return result;
     }
 
-    [HttpPut]
+    [HttpPut("Update")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> Update(
@@ -78,7 +78,7 @@ public class UserController : ControllerBase
         return result;
     }
 
-    [HttpDelete]
+    [HttpDelete("Delete")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> Delete(

@@ -23,8 +23,7 @@ public class DevicesService : IDevicesService
         CancellationToken cancellationToken = default)
     {
         var row = await _dbContext.Devices
-            .AsNoTracking()
-            .SingleOrDefaultAsync(
+            .FirstOrDefaultAsync(
                 r => r.Id == command.Id,
                 cancellationToken)
             .ConfigureAwait(false);

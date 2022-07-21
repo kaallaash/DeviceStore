@@ -18,13 +18,14 @@ public class DeviceController : ControllerBase
         _devicesService = devicesService;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("Get")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<DeviceDetails>> Get(
-    [FromRoute] GetDeviceDetailsCommand command,
+    [FromQuery] GetDeviceDetailsCommand command,
     CancellationToken cancellationToken = default)
     {
+
         var result = await _devicesService
             .Get(command, cancellationToken)
             //.WithActionResult()
@@ -33,11 +34,11 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("Search")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<DeviceDetailsScrollableCollection>> Search(
-        [FromRoute] SearchScrollableCollectionCommand command,
+        [FromQuery] SearchScrollableCollectionCommand command,
         CancellationToken cancellationToken = default)
     {
         var result = await _devicesService
@@ -48,7 +49,7 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<DeviceDetails>> Create(
@@ -63,7 +64,7 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpPost]
+    [HttpPost("Add")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<DeviceDetails>> Add(
@@ -78,7 +79,7 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpPost]
+    [HttpPost("Subtract")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<DeviceDetails>> Subtract(
@@ -93,7 +94,7 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpPut]
+    [HttpPut("Update")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> Update(
@@ -108,7 +109,7 @@ public class DeviceController : ControllerBase
         return result;
     }
 
-    [HttpDelete]
+    [HttpDelete("Delete")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public async Task<ActionResult<string>> Delete(
