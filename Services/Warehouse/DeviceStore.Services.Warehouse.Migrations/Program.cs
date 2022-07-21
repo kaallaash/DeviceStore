@@ -8,7 +8,7 @@ public static class Program
     public static async Task Main(string[] args)
     {
         var cancellationToken = new CancellationToken();
-        var service = new DatabaseMigrationService<DevicesDbContext>();
+        var service = new DatabaseMigrationService<WarehouseDbContext>();
 
         await service
             .Migrate(

@@ -11,9 +11,9 @@ namespace DeviceStore.Services.Warehouse;
 
 public class DevicesService : IDevicesService
 {
-    private readonly DevicesDbContext _dbContext;
+    private readonly WarehouseDbContext _dbContext;
 
-    public DevicesService(DevicesDbContext dbContext)
+    public DevicesService(WarehouseDbContext dbContext)
     {
         _dbContext = dbContext;
     }

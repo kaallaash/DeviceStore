@@ -13,7 +13,7 @@ public static class Registration
        this IServiceCollection services,
        IConfiguration configuration)
     {
-        services.AddDbContextPool<DevicesDbContext>(
+        services.AddDbContextPool<WarehouseDbContext>(
             (s, b) =>
                 b.UseNpgsql(configuration.GetConnectionString("WarehouseDb")));
 

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DeviceStore.Services.Warehouse.Migrations.Migrations
 {
-    [DbContext(typeof(DevicesDbContext))]
+    [DbContext(typeof(WarehouseDbContext))]
     [Migration("20220721212422_Initial")]
     partial class Initial
     {

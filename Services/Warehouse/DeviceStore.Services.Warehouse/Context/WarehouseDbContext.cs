@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DeviceStore.Services.Warehouse.Context;
 
-public class DevicesDbContext : DbContext
+public class WarehouseDbContext : DbContext
 {
     public DbSet<DeviceRow> Devices { get; set; } = null!;
 
-    public DevicesDbContext(DbContextOptions<DevicesDbContext> options)
+    public WarehouseDbContext(DbContextOptions<WarehouseDbContext> options)
         : base(options)
     {
     }

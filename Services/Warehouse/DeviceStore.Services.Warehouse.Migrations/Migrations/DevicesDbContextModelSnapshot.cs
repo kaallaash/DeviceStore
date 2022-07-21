@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DeviceStore.Services.Warehouse.Migrations.Migrations
 {
-    [DbContext(typeof(DevicesDbContext))]
+    [DbContext(typeof(WarehouseDbContext))]
     partial class DevicesDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
