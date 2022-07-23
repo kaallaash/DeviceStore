@@ -1,0 +1,18 @@
+﻿@using DeviceStore.Portal.App.ViewModels;
+@model List<DeviceViewModel>
+
+<div class="text-center">
+    <h2>Warehouse/get</h2>
+</div>	
+<form action="/account/index">
+               <button>Index</button>
+           </form>
+<div>
+    <h3>В списке @Model.Count элемента</h3>
+@foreach(var device in Model)
+{
+    <p><a href="getbyid?id=@device.Id"> @device.Name</a>: Цена:@device.Price$ 
+        <a href="getbyid?id=@device.Id"> Забронировать</a></p>
+    <p>Кол-во на складе: @device.Count шт</p>
+}
+</div>

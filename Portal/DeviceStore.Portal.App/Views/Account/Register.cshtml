@@ -1,0 +1,42 @@
+﻿@model DeviceStore.Portal.App.ViewModels.RegisterViewModel
+
+<div class="text-center">
+    <h2>Регистрация нового пользователя</h2>
+</div>
+<div>
+    <div>
+         @using (Html.BeginForm())
+        {
+            <div>
+            @Html.LabelFor(m => m.Login)
+            @Html.TextBoxFor(m => m.Login)
+            </div>
+            <div>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            </div>
+            <div>
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+            </div>
+            <div>
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone)
+            </div>
+            <div>
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email) 
+            </div>
+            <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password)  
+            </div>
+            <div>
+            @Html.LabelFor(m => m.PasswordConfirm)
+            @Html.TextBoxFor(m => m.PasswordConfirm)    
+            </div>
+           
+           <input type="submit" value="Отправить" />
+        }     
+    </div>
+</div>

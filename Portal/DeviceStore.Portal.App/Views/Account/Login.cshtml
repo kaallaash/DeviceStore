@@ -1,0 +1,32 @@
+﻿@model DeviceStore.Portal.App.ViewModels.LoginViewModel
+
+<div class="text-center">
+    <h2>account/login</h2>
+</div>	
+<form action="/account/index">
+               <button>Index</button>
+           </form>
+<div>
+    <div>
+        <form method="post" asp-controller="Account" asp-action="Login"
+      asp-route-returnUrl="@Model.ReturnUrl">
+         @using (Html.BeginForm())
+        {
+            <div>
+            @Html.LabelFor(m => m.Login)
+            @Html.TextBoxFor(m => m.Login)
+            </div>
+            <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password)  
+            </div>
+            <div>
+            @Html.LabelFor(m => m.RememberMe)
+            @Html.CheckBoxFor(m => m.RememberMe)    
+            </div>
+           
+           <input type="submit" value="Отправить" />
+        }     
+        </form>
+    </div>
+</div>
