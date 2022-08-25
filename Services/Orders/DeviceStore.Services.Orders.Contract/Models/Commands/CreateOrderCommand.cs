@@ -3,4 +3,4 @@
 public record CreateOrderCommand(
     string UserId,
     string DeviceId,
-    string Count);
+    int Count);
