@@ -9,6 +9,10 @@ public interface IOrdersService
         GetOrderCommand command,
         CancellationToken cancellationToken = default);
 
+    Task<List<Order>> GetOrders(
+    GetOrdersCommand command,
+    CancellationToken cancellationToken = default);
+
     Task<Order> Create(
         CreateOrderCommand command,
         CancellationToken cancellationToken = default);
