@@ -1,3 +1,6 @@
 ﻿namespace DeviceStore.Services.Orders.Contract.Models.Commands;
 
-public record CreateOrderCommand();
+public record CreateOrderCommand(
+    string UserId,
+    string DeviceId,
+    string Count);
