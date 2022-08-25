@@ -16,4 +16,8 @@
       <ProjectReference Include="..\..\Services\Warehouse\DeviceStore.Services.Warehouse\DeviceStore.Services.Warehouse.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
